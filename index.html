@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>FlowTask • minimalist task manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="task-app" role="main" aria-label="Task manager application">
+  <div class="app-header">
+    <h1>⚡ FlowTask</h1>
+    <p>manage tasks · persistent storage · keyboard ready</p>
+  </div>
+
+  <!-- reusable add/edit form component -->
+  <div class="task-form" id="taskFormContainer">
+    <div class="input-wrapper">
+      <input type="text" id="taskInput" placeholder="Write a new task...  (press Enter)" aria-label="New task description">
+    </div>
+    <button class="btn-primary" id="addTaskBtn">+ Add task</button>
+  </div>
+
+  <!-- filter controls (reusable) -->
+  <div class="filter-bar">
+    <div class="filter-group" role="tablist" aria-label="Task filters">
+      <button class="filter-btn active" data-filter="all">📋 All</button>
+      <button class="filter-btn" data-filter="active">✨ Active</button>
+      <button class="filter-btn" data-filter="completed">✅ Completed</button>
+    </div>
+    <button class="clear-btn" id="clearCompletedBtn" aria-label="Delete all completed tasks">🗑️ Clear completed</button>
+  </div>
+
+  <!-- dynamic task list -->
+  <div class="task-list-container">
+    <ul class="task-list" id="taskList" aria-label="Task list"></ul>
+  </div>
+
+  <div class="stats-footer">
+    <span id="taskStats">0 tasks · 0 active</span>
+    <div class="key-hint">
+      <span>⏎ save edit</span> <span>⎋ cancel edit</span>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
